@@ -2108,7 +2108,7 @@ def parse_wallet(db, item_callback):
 				d['comment'] = vds.read_string()
 			elif type == "bestblock":
 				d['nVersion'] = vds.read_int32()
-				d.update(parse_BlockLocator(vds))
+				#d.update(parse_BlockLocator(vds))
 			elif type == "ckey":
 				d['public_key'] = kds.read_bytes(kds.read_compact_size())
 				d['encrypted_private_key'] = vds.read_bytes(vds.read_compact_size())
@@ -2499,7 +2499,7 @@ def read_wallet(json_db, db_env, walletfile, print_wallet, print_wallet_transact
 			json_db['acentry'] = (d['account'], d['nCreditDebit'], d['otherAccount'], time.ctime(d['nTime']), d['n'], d['comment'])
 
 		elif type == "bestblock":
-			json_db['bestblock'] = d['hashes'][0][::-1].encode('hex_codec')
+			print("ignored") #json_db['bestblock'] = d['hashes'][0][::-1].encode('hex_codec')
 
 		elif type == "ckey":
 			crypted=True
