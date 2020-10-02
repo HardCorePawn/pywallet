@@ -2524,7 +2524,7 @@ def read_wallet(json_db, db_env, walletfile, print_wallet, print_wallet_transact
 
 		else:
 			json_db[type] = 'unsupported'
-			print "Wallet data not recognized: "+str(d)
+			#print "Wallet data not recognized: "+str(d)
 
 	list_of_reserve_not_in_pool=[]
 	parse_wallet(db, item_callback)
